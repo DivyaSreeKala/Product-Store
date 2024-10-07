@@ -12,12 +12,18 @@ function App() {
   const [count, setCount] = useState(0)
   const productDetails= 
     {
-      productName: 'Iphone',
-      price: 10000,
-      id: 1,
-      descriptiion: 'Smartphone by Apple',
-      category:'Electronics',
-      rating: 4.5
+      productName: '',
+      price: 0,
+      id: 0,
+      descriptiion: '',
+      category:'',
+      rating: 0
+      // productName: 'Iphone',
+      // price: 10000,
+      // id: 1,
+      // descriptiion: 'Smartphone by Apple',
+      // category:'Electronics',
+      // rating: 4.5
       
     }
   
