@@ -10,7 +10,6 @@ const Add = ({products}) => {
 
     // console.log(e)
     setProduct({...product,[e.target.name]:e.target.value})
-
     
   }
   let validate=()=>{
@@ -28,29 +27,32 @@ const Add = ({products}) => {
     }
     if (!product.price) {
       newErrors.price = 'Price is required';
-      console.log(product.price)
+      
     } else if (isNaN(product.price) || Number(product.price) <= 0) {
-      console.log(product.price)
+      
       newErrors.price = 'Price must be a positive number';
     }
 
-    return newErrors;
+    // console.log(newErrors)
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    const validationErrors = validate();
+    // const validationErrors = validate();
     
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
-    if(!errors){
+    // if (validate()) {
+    //   // setErrors(validationErrors);
+    //   return;
+    // }
+    if(validate()){
       // If no errors, proceed with submission logic
       console.log('Form submitted:', product);
-      sendData(product); // Assuming sendData is your function to handle submission
+     
     }
+    
   }
   return ( <div>
     <h2>NEW PRODUCTS</h2>
